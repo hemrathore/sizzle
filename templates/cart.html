@@ -1,0 +1,74 @@
+<html>
+    <head>
+        {% load static %}
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{% static 'css/style.css'%}">
+        <link rel="stylesheet" href="{% static 'css/catalog.css' %}">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        <title>Sizzle</title>
+        <script src="https://www.gstatic.com/firebasejs/7.18.0/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.18.0/firebase-firestore.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.18.0/firebase-auth.js"></script>
+        <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+        <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
+        <script>
+          var firebaseConfig = {
+            apiKey: "AIzaSyAhvkf4p-oe4gFz8XitYkPjXq0gYOuMGgU",
+            authDomain: "sizzle-app-d4cf0.firebaseapp.com",
+            databaseURL: "https://sizzle-app-d4cf0.firebaseio.com",
+            projectId: "sizzle-app-d4cf0",
+            storageBucket: "sizzle-app-d4cf0.appspot.com",
+            messagingSenderId: "443586507905",
+            appId: "1:443586507905:web:d63db75f65424fdc094980"
+          };
+          firebase.initializeApp(firebaseConfig);
+        </script>
+        <script src="{% static 'js/activity.js' %}"></script>
+    </head>
+    <body onload="cart()">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="/catalog/">Sizzle</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+              <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+                <li class="nav-item active">
+                  <a class="nav-link" href="/cart/">Cart</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" onclick="signout()">Sign Out</a>
+                </li>
+              </ul>
+            </div>
+        </nav>
+
+        <div class="container">
+          <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            <strong>Hurry up!</strong> Delicious food is awaiting. Order now and get discount upto ₹40.
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+
+          <div class="container">
+            <h5 id="name"></h5> <br />
+            <img id="image" src="" width="300" /> <br />
+            <p class="mt-3" id="description"></p>
+            <em id="price"></em>
+          </div>
+
+          <hr />
+          <a class="btn btn-primary" href="/checkout/">Continue</a>
+        </div>
+
+        <div class="footer">
+            <p class="footer-content"></p>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    </body>
+</html>

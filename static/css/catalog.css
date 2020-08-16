@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Alata&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather&display=swap');
+
+.container{
+    margin-top: 40px;
+}
+.card-title{
+    font-family: 'Alata', sans-serif;
+    font-size: 25px;
+}
+.card-text{
+    font-size: 15px;
+    font-family: 'Merriweather', serif;
+}
+.but1{
+    margin-right: 20px;
+    margin-top: 10px;
+}
+.but2{
+    margin-top: 10px;
+}

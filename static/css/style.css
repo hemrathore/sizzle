@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alata&display=swap');
+.navbar-brand{
+    font-family: 'Pacifico', cursive;
+}
+.nav-link{
+    font-family: 'Merriweather', serif;
+    font-size: 20px;
+}
+
+.column {
+    float: left;
+    width: 50%;
+    padding: 10px;
+    height: 300px;
+}
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.food1{
+    width: 400px;
+}
+.philosophy{
+    margin-top: 90px;
+    font-family: 'Merriweather', serif;
+    font-size: 40px;
+    text-align: center;
+}
+
+@media screen and (max-width: 600px) {
+    .column {
+      width: 100%;
+    }
+    .food1{
+        padding-left: 55px;
+    }
+}
+
+
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #DCDCDC;
+    text-align: center;
+    padding-top: 23px;
+}
+.card-deck{
+    margin-top: 40px;
+}

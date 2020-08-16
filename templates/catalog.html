@@ -1,0 +1,120 @@
+<html>
+    <head>
+        {% load static %}
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{% static 'css/style.css'%}">
+        <link rel="stylesheet" href="{% static 'css/catalog.css' %}">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        <title>Sizzle</title>
+        <script src="https://www.gstatic.com/firebasejs/7.18.0/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.18.0/firebase-auth.js"></script>
+        <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+        <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
+        <script>
+          var firebaseConfig = {
+            apiKey: "AIzaSyAhvkf4p-oe4gFz8XitYkPjXq0gYOuMGgU",
+            authDomain: "sizzle-app-d4cf0.firebaseapp.com",
+            databaseURL: "https://sizzle-app-d4cf0.firebaseio.com",
+            projectId: "sizzle-app-d4cf0",
+            storageBucket: "sizzle-app-d4cf0.appspot.com",
+            messagingSenderId: "443586507905",
+            appId: "1:443586507905:web:d63db75f65424fdc094980"
+          };
+          firebase.initializeApp(firebaseConfig);
+        </script>
+        <script src="{% static 'js/activity.js' %}"></script>
+    </head>
+    <body onload="check()">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="/catalog/">Sizzle</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+              <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+                <li class="nav-item active">
+                  <a class="nav-link" href="/cart/">Cart</a>
+                </li>
+                <li class="nav-item active">
+                  <a class="nav-link" onclick="signout()">Sign Out</a>
+                </li>
+              </ul>
+            </div>
+        </nav>
+        
+        <div class="container">
+          <h5 id="user-name"></h5>
+        <div class="card-deck">
+          <div class="card">
+            <img class="card-img-top" src="https://firebasestorage.googleapis.com/v0/b/sizzle-app-d4cf0.appspot.com/o/pizza.jpeg?alt=media&token=54cd36d1-6138-433f-a3b5-57e8d60950c9" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">Pizza</h5>
+              <p class="card-text">Starting just at ₹200
+                <br><button onclick="addToCart({'name': 'Pizza', 'image': 'https://images.unsplash.com/photo-1513104890138-7c749659a591?ixlib=rb-1.2.1&w=1000&q=80', 'description': 'Delicious pizza with friends would be the best decision for today!', 'price': '200'})" type="button" class="btn btn-primary but1">Add to Cart</button>
+              </p>
+            </div>
+          </div>
+          <div class="card">
+            <img class="card-img-top" src="https://firebasestorage.googleapis.com/v0/b/sizzle-app-d4cf0.appspot.com/o/burger.jpeg?alt=media&token=c2bdce20-5568-4c51-a8fc-5c2bed192ebb" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">Burger</h5>
+              <p class="card-text">Starting just at ₹70
+                <br><button onclick="addToCart({'name': 'Burger', 'image': 'https://images.unsplash.com/photo-1571091718767-18b5b1457add?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80', 'description': 'Perfect for a lonely day.', 'price': '70'})" type="button" class="btn btn-primary but1">Add to Cart</button>
+              </p>
+            </div>
+          </div>
+          <div class="card">
+            <img class="card-img-top" height="235" src="https://firebasestorage.googleapis.com/v0/b/sizzle-app-d4cf0.appspot.com/o/cake.jpeg?alt=media&token=b48992c1-8c38-4940-893d-31d316524db0" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">Cake</h5>
+              <p class="card-text">Pastries starting just at ₹90
+                <br><button onclick="addToCart({'name': 'Cake', 'image': 'https://images.unsplash.com/photo-1578985545062-69928b1d9587?ixlib=rb-1.2.1&w=1000&q=80', 'description': 'Have some tasty pasteries with family!.', 'price': '90'})" type="button" class="btn btn-primary but1">Add to Cart</button>
+              </p>
+            </div>
+          </div>
+        </div>
+        </div>
+
+        <div class="container" style="margin-bottom: 60px;">
+          <h5 id="user-name"></h5>
+        <div class="card-deck">
+          <div class="card">
+            <img class="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQUwLXXlQPGV6vYihEE1tbHhZctnvOKOBplr2aodv7AheOURnLy0WM3FZHoJPkmPTpMWFIqqhGmQ59lhL0DyOU_G1n2AcOIeSmcog&usqp=CAU&ec=45690275">
+            <div class="card-body">
+              <h5 class="card-title">Butter Paneer</h5>
+              <p class="card-text">Starting just at ₹170
+                <br><button onclick="addToCart({'name': 'Butter Paneer', 'image': 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQUwLXXlQPGV6vYihEE1tbHhZctnvOKOBplr2aodv7AheOURnLy0WM3FZHoJPkmPTpMWFIqqhGmQ59lhL0DyOU_G1n2AcOIeSmcog&usqp=CAU&ec=45690275', 'description': 'Lets have something desi', 'price': '170'})" type="button" class="btn btn-primary but1">Add to Cart</button>
+              </p>
+            </div>
+          </div>
+          <div class="card">
+            <img class="card-img-top" height="240" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcT393leMEeFFcyqvRZacKasQdLJdf1xDySM0kDhmSp2m2sp4eHlq0uHi7jkdWKP7zSjUTV3tMz7k1BHjc3o773LhsQfSe3F5l0d4A&usqp=CAU&ec=45690275">
+            <div class="card-body">
+              <h5 class="card-title">Veg Thali</h5>
+              <p class="card-text">Starting just at ₹250
+                <br><button onclick="addToCart({'name': 'Veg Thali', 'image': 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcT393leMEeFFcyqvRZacKasQdLJdf1xDySM0kDhmSp2m2sp4eHlq0uHi7jkdWKP7zSjUTV3tMz7k1BHjc3o773LhsQfSe3F5l0d4A&usqp=CAU&ec=45690275', 'description': 'Perfect to get the flavour of India', 'price': '250'})" type="button" class="btn btn-primary but1">Add to Cart</button>
+              </p>
+            </div>
+          </div>
+          <div class="card">
+            <img class="card-img-top" height="240" src="https://i.ytimg.com/vi/jbk9iSrfUVg/maxresdefault.jpg" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">Butter Chicken</h5>
+              <p class="card-text">Starting just at ₹150
+                <br><button onclick="addToCart({'name': 'Butter Chicken', 'image': 'https://i.ytimg.com/vi/jbk9iSrfUVg/maxresdefault.jpg', 'description': 'Probably the best Butter Chicken one could get!', 'price': '150'})" type="button" class="btn btn-primary but1">Add to Cart</button>
+              </p>
+            </div>
+          </div>
+        </div>
+        </div>
+
+        <div class="footer">
+            <p class="footer-content"></p>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    </body>
+</html>

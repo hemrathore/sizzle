@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <link href="https://fonts.googleapis.com/css2?family=Suez+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/style.css'%}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Success</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="/catalog/">Sizzle</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+          <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+            <li class="nav-item active">
+                <a class="nav-link" onclick="signout()">Sign Out</a>
+              </li>
+          </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <h1 class="head">Order successfully placed</h1>
+        <img width="100" src="{% static 'img/order-success.png' %}" alt="My image"></br>
+        <a href="/catalog/"><button class="button">Continue shopping</button></a>
+    </div> 
+    <style>
+        .container{
+            margin-top: 100px;
+            text-align: center;
+        }
+        .head{
+            font-family: 'Suez One', serif;
+            font-size: 45px;
+            margin-bottom: 30px;
+        }
+        .button{
+            margin-top: 30px;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            background-color: #228B22;
+        }
+    </style>
+    <div class="footer">
+        <p class="footer-content"></p>
+    </div>
+</body>
+</html>
