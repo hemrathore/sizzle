@@ -105,13 +105,11 @@ USE_L10N = True
 
 USE_TZ = True
 
-#STATIC_ROOT = (os.path.join(SITE_ROOT, 'static_files/'))
+STATIC_ROOT = (os.path.join(SITE_ROOT, 'static_files/'))
 import os
 STATICFILES_DIRS = (
   os.path.join(BASE_DIR, 'static/'),
 )
-
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 STATIC_URL='static/'
 
