@@ -1,1 +1,1 @@
-web: gunicorn sizzle.wsgi
+web: gunicorn sizzle.wsgi --log-file - 
