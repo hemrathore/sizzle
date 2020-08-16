@@ -14,7 +14,7 @@ SECRET_KEY = '%5ffolb^rwachg$vjce#u!me(yb!#36i522fo9dnu(2&4hj+h6'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['getsizzle.herokuapp.com']
 
 
 # Application definition
