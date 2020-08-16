@@ -115,4 +115,4 @@ STATICFILES_DIRS = (
 
 STATIC_URL='static/'
 
-django_heroku.settings(local())
+# django_heroku.settings(local())
